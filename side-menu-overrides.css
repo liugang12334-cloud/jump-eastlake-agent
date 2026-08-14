@@ -1,5 +1,5 @@
 /* Right-side application drawer and compact conversation history */
-.side-menu{left:auto;right:0;transform:translateX(102%);box-shadow:-15px 0 40px #0002}
+.side-menu{left:0;right:auto;transform:translateX(-102%);box-shadow:15px 0 40px #0002}
 .history-list{display:block;border-top:1px solid #e3e8e5}
 .history-list>button{width:100%;padding:13px 2px;border:0;border-bottom:1px solid #e3e8e5;border-radius:0;background:transparent}
 .history-list>button:hover{background:#eef2f0}
@@ -25,8 +25,8 @@
 .composer.voice-mode .text-input-area{display:none}.composer.text-mode .hold-to-talk{display:none}.composer.text-mode .text-input-area{display:flex}
 
 /* Stable schedule drawer: no height animation or scrollbar flashing */
-.activity-process-panel{top:108px;bottom:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
-.activity-process-panel.open{max-height:none;overflow-y:auto;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .18s ease,transform .18s ease}
+.activity-process-panel{top:108px;bottom:auto;height:auto;max-height:min(470px,calc(100% - 150px));overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+.activity-process-panel.open{height:auto;max-height:min(470px,calc(100% - 150px));overflow-y:auto;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .18s ease,transform .18s ease}
 .welcome-guide{margin:10px 0 0;color:#697572;font-size:11px}
 
 /* Hold-to-talk voice state */
@@ -43,3 +43,17 @@
 .voice-card .listening-orb{grid-area:orb;width:62px;height:62px;margin:0 auto 12px;align-self:center;box-shadow:0 0 0 7px #315fe91c;overflow:hidden}.voice-card .listening-orb span{width:18px;height:27px;border-width:3px}.voice-card .listening-orb i{display:none}
 .voice-card h2{grid-area:title;margin:0;font-size:16px;line-height:1.35;white-space:nowrap}.voice-card p{grid-area:transcript;width:100%;height:auto;min-height:34px;margin:0;font-size:12px;line-height:1.5;overflow-wrap:anywhere;text-align:center}
 .voice-card .level-bars{grid-area:bars;height:21px;margin-top:3px}.voice-card>small{grid-area:hint;display:block;margin:0;text-align:center;line-height:1.4;white-space:nowrap}
+
+/* Centered agent title */
+.simple-chat-head{position:relative}.chat-head-title{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;font-size:15px;line-height:1;font-weight:800;white-space:nowrap;color:#17201f;pointer-events:none}
+
+/* Clickable context chips */
+.chat-context>.context-chip{height:25px;padding:0 8px;border:0;border-radius:10px;background:#f2f5f3;color:#65706d;font-size:9px;font-weight:400;box-shadow:none}
+.chat-context>.context-chip:active{background:#e5eae7;color:#315fe8}
+
+/* Personal location card */
+.location-card{margin-top:10px;border:1px solid #dfe6e2;border-radius:15px;background:#fff;overflow:hidden}
+.location-map{position:relative;height:128px;background:linear-gradient(145deg,#deeee8,#c9ded7);overflow:hidden}.location-map:before,.location-map:after{content:'';position:absolute;border:1px solid #afc9c0;border-radius:50%}.location-map:before{width:170px;height:170px;left:-55px;top:24px}.location-map:after{width:120px;height:120px;right:-25px;top:-35px}.location-map>span{position:absolute;z-index:2;left:50%;top:44%;transform:translate(-50%,-50%);width:32px;height:32px;border:4px solid #fff;border-radius:50%;background:#3262ec;color:#fff;display:grid;place-items:center;font-size:9px;font-weight:800;box-shadow:0 5px 15px #315fe855}.location-pulse{position:absolute;left:50%;top:44%;width:66px;height:66px;transform:translate(-50%,-50%);border-radius:50%;background:#3262ec20}.location-map em,.location-map small{position:absolute;z-index:2;left:12px;font-style:normal}.location-map em{bottom:27px;font-size:10px;font-weight:800}.location-map small{bottom:11px;font-size:7px;color:#65736e}.location-summary{padding:12px;border-bottom:1px solid #edf0ee}.location-summary span,.location-summary b,.location-summary small{display:block}.location-summary span{font-size:7px;color:#315fe8}.location-summary b{margin:3px 0;font-size:11px}.location-summary small{font-size:8px;color:#77827e}.location-card h4,.weather-detail-card h4{margin:12px 12px 7px;font-size:10px}.nearby-recommend{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 10px 11px}.nearby-recommend button{min-width:0;padding:8px 5px;border:1px solid #e4e9e6;border-radius:10px;background:#f8faf9;color:#26312d;text-align:left}.nearby-recommend button span,.nearby-recommend button b,.nearby-recommend button small{display:block}.nearby-recommend button span{font-size:18px}.nearby-recommend button b{margin:4px 0;font-size:8px}.nearby-recommend button small{font-size:6px;color:#84908b;line-height:1.4}
+
+/* Detailed weather and practical advice */
+.weather-detail-card{padding:0}.weather-now{display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,#dcecff,#eef5ff)}.weather-now>span{font-size:34px}.weather-now>div{flex:1}.weather-now strong,.weather-now b,.weather-now small{display:block}.weather-now strong{font-size:26px;line-height:1}.weather-now b{font-size:11px}.weather-now small{font-size:7px;color:#65758a}.weather-now em{padding:5px 7px;border-radius:8px;background:#fff3ce;color:#8a6100;font-size:7px;font-style:normal}.weather-metrics{display:grid!important;grid-template-columns:repeat(3,1fr);margin:0!important;padding:10px 12px;border-bottom:1px solid #edf0ee}.weather-metrics span{text-align:center;border-right:1px solid #edf0ee}.weather-metrics span:last-child{border:0}.weather-metrics b,.weather-metrics small{display:block}.weather-metrics b{font-size:10px}.weather-metrics small{font-size:7px;color:#85908b}.weather-advice{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:0 11px 12px}.weather-advice span{padding:8px;border-radius:10px;background:#f5f7f6;font-size:13px}.weather-advice b,.weather-advice small{display:block;margin-left:20px}.weather-advice b{margin-top:-17px;font-size:8px}.weather-advice small{margin-top:3px;font-size:6px;color:#78837f;line-height:1.4}

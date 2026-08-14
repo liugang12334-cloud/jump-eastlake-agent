@@ -1,0 +1,12 @@
+.location-recommend-tabs{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 10px 0;border-bottom:1px solid #edf0ee}
+.location-recommend-tabs button{height:34px;border:0;border-bottom:2px solid transparent;background:#fff;color:#7d8883;font-size:9px;font-weight:700}
+.location-recommend-tabs button.active{border-bottom-color:#315fe8;color:#315fe8}
+.location-card .nearby-recommend{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:11px}
+.location-card .location-recommend-card{position:relative;min-height:112px;padding:10px;border:1px solid #e3e8e5;border-radius:12px;background:#f8faf9;text-align:left;overflow:hidden}
+.location-recommend-card>span{width:32px;height:32px;border-radius:10px;background:#e8efff;display:grid!important;place-items:center;font-size:17px!important}
+.location-recommend-card>em{position:absolute;right:8px;top:9px;max-width:72px;color:#7a8781;font-size:6px;font-style:normal;text-align:right}
+.location-recommend-card>b{margin:8px 0 3px!important;font-size:9px!important}
+.location-recommend-card>small{min-height:22px;font-size:6px!important;line-height:1.45}
+.location-recommend-card>i{display:block;margin-top:7px;color:#315fe8;font-size:7px;font-style:normal}
+.location-recommend-card.scenic-recommend>span{background:#e7f5eb}
+.location-recommend-card.food-recommend>span{background:#fff0df}
