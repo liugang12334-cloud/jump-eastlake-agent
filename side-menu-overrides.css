@@ -1,0 +1,18 @@
+/* Right-side application drawer and compact conversation history */
+.side-menu{left:auto;right:0;transform:translateX(102%);box-shadow:-15px 0 40px #0002}
+.history-list{display:block;border-top:1px solid #e3e8e5}
+.history-list>button{width:100%;padding:13px 2px;border:0;border-bottom:1px solid #e3e8e5;border-radius:0;background:transparent}
+.history-list>button:hover{background:#eef2f0}
+
+/* Monthly hydration check-in calendar */
+.water-calendar{border-radius:18px;background:#fff;padding:16px;margin-bottom:10px}
+.water-calendar-head{display:flex;align-items:center;justify-content:space-between}
+.water-calendar-head h3{margin:0;font-size:12px}.water-calendar-head small{font-size:7px;color:#85908c}
+.water-calendar-head>b{padding:5px 8px;border-radius:9px;background:#e7f7f2;color:#168b75;font-size:8px}
+.calendar-week,.calendar-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.calendar-week{margin:15px 0 8px;color:#9aa39f;font-size:7px}
+.calendar-days i{min-height:38px}
+.calendar-days button{min-width:0;height:38px;padding:4px 0;border:0;border-radius:10px;background:#f2f5f3;color:#52605b;font-size:9px}
+.calendar-days button small{display:block;margin-top:2px;font-size:6px;color:#8b9691}
+.calendar-days button.done{background:#e7f7f2;color:#168b75}.calendar-days button.done:after{content:'✓';margin-left:2px;font-size:6px}
+.calendar-days button.today{background:#168b75;color:#fff;box-shadow:0 5px 12px #168b7538}.calendar-days button.today small{color:#dff8f0}
