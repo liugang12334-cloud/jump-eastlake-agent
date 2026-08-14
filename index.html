@@ -5,7 +5,7 @@
 <div class="demo-workbench">
 <main id="app" class="phone-shell">
   <button id="voiceOrb" hidden aria-hidden="true"></button>
-  <section id="home" class="screen home-screen active">
+  <section id="home" class="screen home-screen" aria-hidden="true">
     <img class="poster" src="jump-eastlake-poster.jpg" alt="2026跳东湖夏日派对活动主视觉">
     <div class="poster-shade"></div>
     <header class="home-head"><div class="mini-brand">跳</div><div><b>2026 跳东湖</b><small>9月4—6日 · 东湖磨山</small></div><button class="more-btn" aria-label="更多">•••</button></header>
@@ -13,12 +13,12 @@
     <div class="home-meta"><div><small>活动时间</small><b>15:00—22:30</b></div><i></i><div><small>活动地点</small><b>磨山景区楚城</b></div></div>
   </section>
 
-  <section id="chat" class="screen chat-screen">
+  <section id="chat" class="screen chat-screen active">
     <header class="chat-head simple-chat-head"><button class="menu-trigger" onclick="toggleSideMenu(true);event.stopPropagation()" aria-label="打开菜单"><i></i><i></i><i></i></button><div class="chat-head-spacer"></div></header>
-    <div class="chat-context"><span>📍 东湖磨山景区</span><span>31°C 多云</span><button id="processEntry" onclick="toggleActivityProcess();event.stopPropagation()">活动流程 <i>⌄</i></button></div>
-    <div id="activityProcessPanel" class="activity-process-panel" aria-hidden="true"><div class="process-panel-head"><div><small>EVENT SCHEDULE</small><b>跳东湖活动流程</b></div><button onclick="toggleActivityProcess(false);event.stopPropagation()">×</button></div><div id="activityProcessBody"></div></div>
+    <div class="chat-context"><span>📍 东湖磨山景区</span><span>31°C 多云</span><button id="processEntry" onclick="toggleActivityProcess();event.stopPropagation()">活动日程 <i>⌄</i></button></div>
+    <div id="activityProcessPanel" class="activity-process-panel" aria-hidden="true"><div class="process-panel-head"><div><small>EVENT SCHEDULE</small><b>跳东湖活动日程</b></div><button onclick="toggleActivityProcess(false);event.stopPropagation()">×</button></div><div id="activityProcessBody"></div></div>
     <div id="messages" class="messages"></div>
-    <div class="composer"><button class="plus" aria-label="更多输入">＋</button><div class="input-wrap"><textarea id="chatInput" rows="1" placeholder="问问东湖小跳"></textarea><button id="inlineVoice" aria-label="语音输入">◉</button></div><button id="sendBtn" class="send" aria-label="发送">➤</button></div>
+    <div id="chatComposer" class="composer voice-mode"><button id="inputModeToggle" class="input-mode-toggle" onclick="toggleInputMode()" aria-label="切换为文字输入">⌨</button><button id="holdToTalk" class="hold-to-talk" onpointerdown="startHoldVoice(event)" onpointermove="moveHoldVoice(event)" onpointerup="endHoldVoice(event)" onpointercancel="cancelHoldVoice(event)" oncontextmenu="return false"><span class="voice-wave-mini"><i></i><i></i><i></i><i></i></span><b>按住说话</b></button><div class="input-wrap text-input-area"><textarea id="chatInput" rows="1" placeholder="问问东湖小跳"></textarea><button id="inlineVoice" aria-label="语音输入">◉</button></div><button id="sendBtn" class="send text-input-area" aria-label="发送">➤</button></div>
     <div id="menuOverlay" class="menu-overlay" onclick="toggleSideMenu(false)"></div><aside id="sideMenu" class="side-menu" aria-hidden="true"><header><div><small>MY SERVICES</small><b>业务与会话</b></div><button onclick="toggleSideMenu(false)">×</button></header><section><h3>业务应用</h3><div class="business-apps"><button onclick="openWaterApp()"><span>💧</span><b>喝水打卡</b><small>补水提醒</small></button><button onclick="toggleSideMenu(false);toggleActivityProcess(true)"><span>📅</span><b>活动流程</b><small>三日日程</small></button><button onclick="toggleSideMenu(false);openRoute(0)"><span>🗺</span><b>官方路线</b><small>精选路线</small></button><button onclick="toggleSideMenu(false);ask('查询附近POI信息点位')"><span>📍</span><b>POI查询</b><small>服务设施</small></button></div></section><section class="history-section"><div class="history-title"><h3>历史会话</h3><button data-action="new" onclick="toggleSideMenu(false)">＋ 新对话</button></div><div class="history-list"><button onclick="toggleSideMenu(false)"><b>附近停车场还有位置吗？</b><small>今天 15:06</small></button><button onclick="toggleSideMenu(false)"><b>请给我活动日程安排</b><small>今天 14:52</small></button><button onclick="toggleSideMenu(false)"><b>推荐适合亲子的路线</b><small>昨天 19:28</small></button><button onclick="toggleSideMenu(false)"><b>门票和保险怎么买？</b><small>8月12日</small></button></div></section></aside>
   </section>
 
@@ -32,7 +32,7 @@
     </div>
   </section>
 
-  <div id="voicePanel" class="voice-panel" aria-hidden="true"><div class="voice-card"><div class="listening-orb"><span></span><i></i><i></i><i></i></div><h2 id="voiceTitle">正在聆听…</h2><p id="voiceTranscript">请说出你的问题</p><div class="level-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>松开后自动识别并进入对话</small><button id="cancelVoice">取消</button></div></div>
+  <div id="voicePanel" class="voice-panel" aria-hidden="true"><div class="voice-card"><div id="voiceCancelZone" class="voice-cancel-zone">↑ 上划到这里，松开取消</div><div class="listening-orb"><span></span><i></i><i></i><i></i></div><h2 id="voiceTitle">正在聆听…</h2><p id="voiceTranscript">请说出你的问题</p><div class="level-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small id="voiceHint">松开发送 · 上划取消</small><button id="cancelVoice">取消输入</button></div></div>
   <div id="detailSheet" class="sheet" aria-hidden="true"></div><div id="toast"></div>
 </main>
 <aside class="scenario-panel" aria-label="智能体场景演示清单">

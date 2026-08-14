@@ -16,3 +16,30 @@
 .calendar-days button small{display:block;margin-top:2px;font-size:6px;color:#8b9691}
 .calendar-days button.done{background:#e7f7f2;color:#168b75}.calendar-days button.done:after{content:'✓';margin-left:2px;font-size:6px}
 .calendar-days button.today{background:#168b75;color:#fff;box-shadow:0 5px 12px #168b7538}.calendar-days button.today small{color:#dff8f0}
+
+/* Voice-first chat composer */
+.input-mode-toggle{width:39px;height:39px;flex:0 0 auto;border:0;border-radius:50%;background:#eef2f0;color:#26322e;font-size:17px}
+.hold-to-talk{flex:1;height:42px;border:1px solid #dce3df;border-radius:21px;background:#f2f5f3;color:#26322e;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;font-weight:700;touch-action:none}
+.hold-to-talk:active{background:#e7edeb;transform:scale(.99)}
+.voice-wave-mini{height:18px;display:flex;align-items:center;gap:2px}.voice-wave-mini i{display:block;width:2px;height:7px;border-radius:2px;background:#3262ec}.voice-wave-mini i:nth-child(2){height:15px}.voice-wave-mini i:nth-child(3){height:11px}.voice-wave-mini i:nth-child(4){height:5px}
+.composer.voice-mode .text-input-area{display:none}.composer.text-mode .hold-to-talk{display:none}.composer.text-mode .text-input-area{display:flex}
+
+/* Stable schedule drawer: no height animation or scrollbar flashing */
+.activity-process-panel{top:108px;bottom:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+.activity-process-panel.open{max-height:none;overflow-y:auto;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .18s ease,transform .18s ease}
+.welcome-guide{margin:10px 0 0;color:#697572;font-size:11px}
+
+/* Hold-to-talk voice state */
+.hold-to-talk{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.voice-cancel-zone{display:none}
+.voice-panel.cancel-mode .voice-cancel-zone{background:#ffe8e6;color:#d54135;transform:scale(1.05)}
+.voice-panel.cancel-mode .listening-orb{background:linear-gradient(145deg,#ff9c91,#e64e42);box-shadow:0 0 0 14px #e64e421c}
+.voice-panel.cancel-mode #voiceHint{color:#d54135;font-weight:700}
+.voice-card>#cancelVoice{display:none}
+.composer{z-index:21}
+.voice-panel{inset:auto 0 calc(59px + env(safe-area-inset-bottom));background:transparent;align-items:end;backdrop-filter:none;pointer-events:none}
+.voice-panel.open{display:flex}
+.voice-card{width:100%;padding:16px 14px 15px;border-radius:24px 24px 0 0;box-shadow:0 -12px 34px #17201f1c;border-bottom:1px solid #e4e9e6;pointer-events:none;display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:'orb' 'title' 'transcript' 'bars' 'hint';row-gap:5px;text-align:center}
+.voice-card .listening-orb{grid-area:orb;width:62px;height:62px;margin:0 auto 12px;align-self:center;box-shadow:0 0 0 7px #315fe91c;overflow:hidden}.voice-card .listening-orb span{width:18px;height:27px;border-width:3px}.voice-card .listening-orb i{display:none}
+.voice-card h2{grid-area:title;margin:0;font-size:16px;line-height:1.35;white-space:nowrap}.voice-card p{grid-area:transcript;width:100%;height:auto;min-height:34px;margin:0;font-size:12px;line-height:1.5;overflow-wrap:anywhere;text-align:center}
+.voice-card .level-bars{grid-area:bars;height:21px;margin-top:3px}.voice-card>small{grid-area:hint;display:block;margin:0;text-align:center;line-height:1.4;white-space:nowrap}
