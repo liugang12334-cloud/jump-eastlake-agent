@@ -1,0 +1,20 @@
+/* 票务购买卡 · 三渠道购票 UI */
+.ticket-channels{display:flex;flex-direction:column;gap:8px;margin:11px 11px 0}
+.ticket-channel{display:flex;align-items:center;gap:9px;padding:9px 10px;border:1px solid var(--line);border-radius:12px;background:#fafbfa}
+.ticket-channel .channel-icon{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:9px;font-size:17px;color:#fff}
+.ticket-channel .channel-icon.douyin{background:linear-gradient(135deg,#161823,#2b2f3a)}
+.ticket-channel .channel-icon.xiaohongshu{background:#ff2442}
+.ticket-channel .channel-icon.wechat-mini{background:#16785f}
+.ticket-channel .channel-info{flex:1;min-width:0}
+.ticket-channel .channel-info b{display:block;font-size:10px;color:var(--ink)}
+.ticket-channel .channel-info small{display:block;font-size:8px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ticket-channel .channel-buy{flex:0 0 auto;border:0;border-radius:9px;padding:0 13px;height:30px;font-size:10px;font-weight:800;color:#fff;background:var(--blue)}
+.ticket-channel .channel-buy.douyin{background:#161823}
+.ticket-channel .channel-buy.xiaohongshu{background:#ff2442}
+.ticket-channel .channel-buy.wechat-mini{background:#16785f}
+.ticket-channel .channel-buy:active{transform:scale(.96)}
+/* 渠道弹窗（小红书 / 小程序） */
+.ticket-sheet-icon{width:52px;height:52px;margin:0 auto 10px;display:grid;place-items:center;border-radius:16px;font-size:26px;color:#fff}
+.ticket-sheet-icon.xiaohongshu{background:#ff2442}
+.ticket-sheet-icon.wechat-mini{background:#16785f}
+.ticket-sheet-key{display:block;margin:8px auto;padding:9px 12px;border:1px dashed var(--line);border-radius:10px;background:#fafbfa;font-size:11px;font-weight:800;color:var(--ink);text-align:center;word-break:break-all}
