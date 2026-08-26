@@ -67,3 +67,8 @@
 .personal-route-secondary{display:flex;gap:8px}
 .personal-route-secondary button{flex:1;border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:11px;padding:10px 12px;font-size:11px;cursor:pointer}
 .personal-route-secondary button:active{background:#f5f7ff}
+
+/* 官方路线页底部「保存我的路线」按钮 */
+.route-save-mine{display:block;width:calc(100% - 22px);margin:11px 11px calc(14px + env(safe-area-inset-bottom));border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:11px;padding:12px;font-size:11px;font-weight:700;cursor:pointer}
+.route-save-mine.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.route-save-mine:active{opacity:.9}
