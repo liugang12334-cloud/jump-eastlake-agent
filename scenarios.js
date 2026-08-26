@@ -8,6 +8,7 @@ window.DEMO_SCENARIOS = [
   {id:'activity-highlight',group:'活动内容',title:'活动亮点',prompt:'这次活动有哪些亮点？',card:'亮点图文卡',description:'横向浏览水上、运动、市集与音乐亮点'},
   {id:'activity-schedule',group:'活动内容',title:'活动日程',prompt:'请给我活动日程安排',card:'日程提醒卡',description:'时间轴查看节目并订阅提醒'},
   {id:'route-official',group:'路线与位置',title:'官方推荐路线',prompt:'给我推荐一条官方游玩路线',card:'地图路线卡',description:'进入独立路线页，可自定义或由 Agent 生成'},
+  {id:'route-personal',group:'路线与位置',title:'生成个性化路线',prompt:'帮我生成一条半日个性化路线',card:'个性化路线卡',description:'智能体对话生成专属路线，终点统一为楚城，可保存至我的路线'},
   {id:'poi-toilet',group:'路线与位置',title:'POI信息点位查询',prompt:'查询附近的POI信息点位，包括厕所、补水点、售票处、游客中心、码头、游船、电瓶车、便民服务点、医疗点、AED、休息点和充电点',card:'POI 列表卡',description:'集中展示便民、医疗及游览点位的距离、状态、详情与导航'},
   {id:'poi-scenic',group:'路线与位置',title:'周边景点',prompt:'周边有什么景点？',card:'景点 POI 卡',description:'查看景点介绍、距离与步行导航'},
   {id:'poi-merchant',group:'路线与位置',title:'周边商户',prompt:'附近有哪些商户、咖啡和文创？',card:'商户 POI 卡',description:'营业状态、人均消费、排队与导航'},

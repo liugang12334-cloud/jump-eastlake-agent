@@ -1,0 +1,69 @@
+/* 我的路线 / 个性化路线推荐 — 暗色极光风格移动端 */
+.my-routes-screen{background:var(--paper)}
+.my-routes-scroll{position:absolute;top:70px;bottom:0;left:0;right:0;overflow:auto;padding:12px 12px calc(20px + env(safe-area-inset-bottom))}
+
+/* 空状态 */
+.my-routes-empty{margin-top:18%;text-align:center;padding:24px 22px;color:var(--muted)}
+.my-routes-empty span{font-size:46px;display:block;margin-bottom:10px;filter:saturate(1.1)}
+.my-routes-empty b{display:block;font-size:15px;color:var(--ink);margin-bottom:7px}
+.my-routes-empty p{font-size:11px;line-height:1.7;margin:0 0 16px}
+.my-routes-empty .primary{width:100%;margin-top:4px}
+
+/* 通用主按钮 */
+.primary{border:0;border-radius:11px;background:var(--blue);color:#fff;padding:10px 16px;font-size:11px;font-weight:700;cursor:pointer}
+.primary:active{opacity:.85}
+
+/* 已保存路线卡片 */
+.my-route-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:13px;margin-bottom:11px;box-shadow:0 6px 18px #17201f08}
+.my-route-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.my-route-top>div{flex:1;min-width:0}
+.my-route-top b{display:block;font-size:14px;color:var(--ink)}
+.my-route-top small{display:block;font-size:9px;color:var(--muted);margin-top:3px;line-height:1.5}
+.my-route-del{flex:0 0 auto;border:1px solid #ffd9d0;background:#fff4f1;color:#c0341b;border-radius:9px;padding:5px 9px;font-size:9px;cursor:pointer}
+.my-route-del:active{background:#ffe6df}
+.my-route-metrics{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:center;margin:10px 0}
+.my-route-metrics span{background:#f4f6f4;border-radius:9px;padding:6px 8px}
+.my-route-metrics b{display:block;font-size:12px;color:var(--ink)}
+.my-route-metrics small{font-size:7px;color:var(--muted)}
+.my-route-metrics em{font-style:normal;font-size:8px;background:#e8f7ef;color:#16785f;padding:5px 7px;border-radius:8px;text-align:center}
+
+/* 节点列表 */
+.my-route-stops{list-style:none;margin:4px 0 0;padding:0}
+.my-route-stop{display:grid;grid-template-columns:24px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-top:1px dashed #eef0ee}
+.my-route-stop:first-child{border-top:0}
+.my-route-stop>i{width:24px;height:24px;border-radius:50%;background:#eef2ff;color:var(--blue);display:grid;place-items:center;font-size:10px;font-style:normal;font-weight:700}
+.my-route-stop .stop-main{flex:1;min-width:0;cursor:pointer;text-align:left}
+.my-route-stop .stop-main b{display:block;font-size:11px;color:var(--ink)}
+.my-route-stop .stop-main small{display:block;font-size:8px;color:var(--muted);margin-top:2px}
+.stop-del{width:26px;height:26px;border:0;border-radius:50%;background:#f4f5f4;color:#9aa3a0;font-size:16px;line-height:1;cursor:pointer}
+.stop-del:active{background:#ebeceb;color:#c0341b}
+.endpoint-tag{font-style:normal;font-size:8px;background:#fdeae4;color:#c0341b;border:1px solid #f7cabb;padding:4px 7px;border-radius:8px;white-space:nowrap}
+.my-route-stop.endpoint .stop-main b{color:#c0341b}
+.my-route-stop.endpoint>i{background:var(--orange);color:#fff}
+
+/* 卡片底部 */
+.my-route-foot{margin-top:11px}
+.my-route-foot .primary{width:100%}
+.my-route-note{font-size:8px;color:var(--muted);margin:9px 0 0;line-height:1.6}
+.my-route-note::before{content:"🔒 ";filter:grayscale(.2)}
+
+/* 对话生成预览卡（出现在聊天流中） */
+.route-library-card{border:1px solid #dbe3ff;background:#f7f9ff;border-radius:15px;padding:13px;margin-top:11px}
+.personal-route-card{box-shadow:0 8px 22px #2f64f420}
+.route-library-head span{display:inline-block;font-size:8px;color:var(--blue);background:#e8eeff;padding:4px 8px;border-radius:8px;margin-bottom:7px}
+.route-library-head b{display:block;font-size:14px;color:var(--ink)}
+.route-library-head small{display:block;font-size:9px;color:var(--muted);margin-top:4px;line-height:1.5}
+.route-preview-list{margin:11px 0 0;display:grid;gap:7px}
+.route-preview-item{display:grid;grid-template-columns:auto 1fr auto;gap:9px;align-items:center;background:#fff;border:1px solid #eef1f8;border-radius:11px;padding:9px 10px}
+.route-preview-item em{font-style:normal;font-size:8px;color:var(--muted);background:#f3f5fa;padding:3px 6px;border-radius:7px;white-space:nowrap}
+.route-preview-item span b{display:block;font-size:11px;color:var(--ink)}
+.route-preview-item span small{display:block;font-size:8px;color:var(--muted);margin-top:2px}
+.route-preview-item>i{font-style:normal;color:#c2c9d4;font-size:14px}
+.route-preview-item.is-endpoint{background:#fff5f1;border-color:#f7cabd}
+.route-preview-item.is-endpoint em{color:#c0341b;background:#fdeae4}
+.route-preview-item.is-endpoint>i{color:var(--orange)}
+.personal-route-actions{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.personal-route-actions .primary{width:100%}
+.personal-route-secondary{display:flex;gap:8px}
+.personal-route-secondary button{flex:1;border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:11px;padding:10px 12px;font-size:11px;cursor:pointer}
+.personal-route-secondary button:active{background:#f5f7ff}
