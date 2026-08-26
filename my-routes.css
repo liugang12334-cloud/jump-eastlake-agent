@@ -19,33 +19,40 @@
 .my-route-top>div{flex:1;min-width:0}
 .my-route-top b{display:block;font-size:14px;color:var(--ink)}
 .my-route-top small{display:block;font-size:9px;color:var(--muted);margin-top:3px;line-height:1.5}
+.my-route-title-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.my-route-title-row .endpoint-label{font-style:normal;font-size:8px;background:#e8f7ef;color:#16785f;padding:4px 7px;border-radius:8px;white-space:nowrap}
 .my-route-del{flex:0 0 auto;border:1px solid #ffd9d0;background:#fff4f1;color:#c0341b;border-radius:9px;padding:5px 9px;font-size:9px;cursor:pointer}
 .my-route-del:active{background:#ffe6df}
-.my-route-metrics{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:center;margin:10px 0}
+.my-route-metrics{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:center;margin:10px 0}
 .my-route-metrics span{background:#f4f6f4;border-radius:9px;padding:6px 8px}
 .my-route-metrics b{display:block;font-size:12px;color:var(--ink)}
 .my-route-metrics small{font-size:7px;color:var(--muted)}
-.my-route-metrics em{font-style:normal;font-size:8px;background:#e8f7ef;color:#16785f;padding:5px 7px;border-radius:8px;text-align:center}
 
-/* 节点列表 */
-.my-route-stops{list-style:none;margin:4px 0 0;padding:0}
-.my-route-stop{display:grid;grid-template-columns:24px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-top:1px dashed #eef0ee}
-.my-route-stop:first-child{border-top:0}
-.my-route-stop>i{width:24px;height:24px;border-radius:50%;background:#eef2ff;color:var(--blue);display:grid;place-items:center;font-size:10px;font-style:normal;font-weight:700}
-.my-route-stop .stop-main{flex:1;min-width:0;cursor:pointer;text-align:left}
-.my-route-stop .stop-main b{display:block;font-size:11px;color:var(--ink)}
-.my-route-stop .stop-main small{display:block;font-size:8px;color:var(--muted);margin-top:2px}
-.stop-del{width:26px;height:26px;border:0;border-radius:50%;background:#f4f5f4;color:#9aa3a0;font-size:16px;line-height:1;cursor:pointer}
+/* 节点列表 — 时间轴 */
+.my-route-stops{list-style:none;margin:8px 0 0;padding:0;position:relative;display:flex;flex-direction:column}
+.my-route-stops::before{content:'';position:absolute;left:12px;top:12px;bottom:12px;width:0;border-left:1px dashed #c9d0e5;z-index:0}
+.my-route-stop{display:grid;grid-template-columns:24px 1fr auto;gap:9px;align-items:center;padding:11px 0;position:relative;z-index:1}
+.my-route-stop>i{width:24px;height:24px;border-radius:50%;background:#eef2ff;color:var(--blue);display:grid;place-items:center;font-size:10px;font-style:normal;font-weight:700;position:relative;z-index:2}
+.my-route-stop .stop-main{flex:1;min-width:0;text-align:left}
+.my-route-stop .stop-main b{display:inline;font-size:11px;color:var(--ink);margin-right:6px}
+.my-route-stop .stop-main small{display:block;font-size:8px;color:var(--muted);margin-top:3px}
+.stop-actions{display:flex;align-items:center;gap:5px}
+.stop-actions button{white-space:nowrap;border-radius:8px;padding:5px 8px;font-size:8px;cursor:pointer;line-height:1}
+.stop-change{border:1px solid #dbe3ff;background:#f7f9ff;color:var(--blue)}
+.stop-change:active{background:#edf2ff}
+.stop-del{width:26px;height:26px;border:0;border-radius:50%;background:#f4f5f4;color:#9aa3a0;font-size:16px;line-height:1;cursor:pointer;padding:0}
 .stop-del:active{background:#ebeceb;color:#c0341b}
+.stop-nav{vertical-align:middle;border:1px solid var(--blue);background:var(--blue);color:#fff;border-radius:8px;padding:5px 8px;font-size:8px;cursor:pointer;line-height:1;font-weight:600}
+.stop-nav:active{opacity:.9}
 .endpoint-tag{font-style:normal;font-size:8px;background:#fdeae4;color:#c0341b;border:1px solid #f7cabb;padding:4px 7px;border-radius:8px;white-space:nowrap}
 .my-route-stop.endpoint .stop-main b{color:#c0341b}
 .my-route-stop.endpoint>i{background:var(--orange);color:#fff}
 
-/* 卡片底部 */
-.my-route-foot{margin-top:11px}
-.my-route-foot .primary{width:100%}
+/* 节点间新增图标 */
+.my-route-insert{display:grid;grid-template-columns:24px 1fr auto;gap:9px;align-items:center;justify-items:center;padding:6px 0;position:relative;z-index:1}
+.my-route-insert .stop-add{width:18px;height:18px;border-radius:50%;border:1px dashed #c9d0e5;background:#fff;color:var(--blue);font-size:12px;line-height:16px;cursor:pointer;padding:0;position:relative;z-index:2}
+.my-route-insert .stop-add:active{background:#f3f5fb}
 .my-route-note{font-size:8px;color:var(--muted);margin:9px 0 0;line-height:1.6}
-.my-route-note::before{content:"🔒 ";filter:grayscale(.2)}
 
 /* 对话生成预览卡（出现在聊天流中） */
 .route-library-card{border:1px solid #dbe3ff;background:#f7f9ff;border-radius:15px;padding:13px;margin-top:11px}
@@ -74,3 +81,11 @@
 .route-save-mine:active{opacity:.9}
 .route-footer{z-index:5}
 .route-footer .route-save-mine{width:100%;margin:0;padding:14px;font-size:13px}
+
+/* 更换/新增节点选择器 */
+.stop-picker-list{display:grid;gap:7px;margin:11px 0;max-height:45vh;overflow:auto}
+.stop-picker-item{display:flex;align-items:center;justify-content:space-between;width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 12px;text-align:left;color:var(--ink);cursor:pointer}
+.stop-picker-item span b{display:block;font-size:12px}
+.stop-picker-item span small{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.stop-picker-item>i{font-style:normal;color:#9aa5a1}
+.stop-picker-item:active{background:#f7f8fb}
