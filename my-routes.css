@@ -62,13 +62,15 @@
 .route-preview-item.is-endpoint{background:#fff5f1;border-color:#f7cabd}
 .route-preview-item.is-endpoint em{color:#c0341b;background:#fdeae4}
 .route-preview-item.is-endpoint>i{color:var(--orange)}
-.personal-route-actions{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.personal-route-actions .primary{width:100%}
-.personal-route-secondary{display:flex;gap:8px}
-.personal-route-secondary button{flex:1;border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:11px;padding:10px 12px;font-size:11px;cursor:pointer}
-.personal-route-secondary button:active{background:#f5f7ff}
+.personal-route-actions{display:flex;flex-direction:row;gap:10px;margin-top:12px}
+.personal-route-actions button{flex:1;border-radius:11px;padding:11px 10px;font-size:11px;font-weight:600;cursor:pointer}
+.personal-route-actions .primary{background:var(--blue);color:#fff;border:0}
+.personal-route-actions .secondary{background:#fff;color:var(--blue);border:1px solid var(--line)}
+.personal-route-actions button:active{opacity:.92}
 
 /* 官方路线页底部「保存我的路线」按钮 */
-.route-save-mine{display:block;width:calc(100% - 22px);margin:11px 11px calc(14px + env(safe-area-inset-bottom));border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:11px;padding:12px;font-size:11px;font-weight:700;cursor:pointer}
+.route-save-mine{width:100%;border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:12px;padding:13px;font-size:13px;font-weight:700;cursor:pointer}
 .route-save-mine.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
 .route-save-mine:active{opacity:.9}
+.route-footer{z-index:5}
+.route-footer .route-save-mine{width:100%;margin:0;padding:14px;font-size:13px}
