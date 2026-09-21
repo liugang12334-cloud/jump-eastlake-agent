@@ -18,6 +18,7 @@ window.DEMO_SCENARIOS = [
   {id:'insurance',group:'交易服务',title:'保险购买',prompt:'参加跳水活动保险怎么买？',card:'保险购买卡',description:'保障要求、风险提示和合作平台入口'},
   {id:'crowd',group:'实时状态',title:'景点人流与舒适度',prompt:'现在各景点人流怎么样，哪里人少？',card:'人流舒适度卡',description:'模拟人数、趋势、排队时间与错峰建议'},
   {id:'weather',group:'实时状态',title:'天气与高温提醒',prompt:'今天活动现场天气怎么样？',card:'天气预警卡',description:'体感温度、防晒补水和雷雨提醒'},
-  {id:'safety',group:'安全保障',title:'医疗与紧急求助',prompt:'现场安全保障怎么样，受伤如何求助？',card:'安全应急卡',description:'最近医疗站、AED 与紧急定位求助'},
+  {id:'safety',group:'安全保障',title:'医疗与紧急求助',prompt:'现场安全保障怎么样，受伤了怎么急救？',card:'安全应急卡',description:'最近医疗站、AED 与紧急定位求助'},
+  {id:'consult-bus',group:'咨询求助',title:'咨询观光车联系方式',prompt:'我想咨询东湖观光车的联系电话',card:'咨询求助卡',description:'按咨询事项匹配单位，展示联系电话与【拨打】按钮；切换分类可查看【去咨询】在线跳转'},
   {id:'fallback',group:'基础能力',title:'自由问答兜底',prompt:'你都能帮我做什么？',card:'基础文本回答',description:'展示智能体未命中专项意图时的能力说明'}
 ];

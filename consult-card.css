@@ -1,0 +1,46 @@
+/* 咨询求助卡 — 官方联系渠道（样式对齐紧急求助面板：SOS横幅 + 行式联系卡 + 蓝色按钮） */
+.consult-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:13px;margin-top:11px;box-shadow:0 8px 22px #17201f0a}
+.consult-head{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.consult-head .consult-badge{align-self:flex-start;font-size:8px;color:var(--blue);background:#e8eeff;padding:4px 8px;border-radius:8px}
+.consult-head b{font-size:14px;color:var(--ink)}
+.consult-head small{font-size:9px;color:var(--muted);line-height:1.6}
+
+/* SOS 横幅 — 参考紧急求助面板首条样式 */
+.consult-sos{display:flex;gap:11px;align-items:center;background:#fdf0ee;border:1px solid #ffdcd4;border-radius:13px;padding:13px 12px;margin-bottom:11px}
+.consult-sos>span{width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:#e34d3f;color:#fff;display:grid;place-items:center;font-size:19px;font-weight:800}
+.consult-sos b{display:block;font-size:12.5px;color:#c0341b}
+.consult-sos small{display:block;font-size:9px;color:#b07a6e;margin-top:3px}
+
+.consult-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:3px;margin-bottom:9px;-webkit-overflow-scrolling:touch}
+.consult-tabs::-webkit-scrollbar{display:none}
+.consult-tab{flex:0 0 auto;white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:20px;padding:6px 10px;font-size:9px;cursor:pointer}
+.consult-tab.active{border-color:var(--blue);background:var(--blue);color:#fff;font-weight:700}
+
+/* 上下结构联系单位卡：图标+名称+电话 / 可咨询事项 / 按钮行 */
+.consult-list{display:grid;gap:9px}
+.consult-item{display:flex;flex-direction:column;gap:8px;border:1px solid #eef1f8;border-radius:13px;padding:12px;background:#fff}
+.consult-item-top{display:flex;align-items:center;gap:10px}
+.consult-icon{width:42px;height:42px;flex:0 0 42px;border-radius:11px;background:#eef2f9;display:grid;place-items:center;font-size:19px}
+.consult-info{flex:1;min-width:0;text-align:left}
+.consult-info b{display:block;font-size:12.5px;color:var(--ink);line-height:1.4}
+.consult-info .consult-tel{display:block;margin-top:3px;font-style:normal;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.2px}
+.consult-info .consult-tel.no-tel{color:var(--muted);font-weight:600}
+
+.consult-scope{margin:0;font-size:9.5px;color:var(--muted);line-height:1.6}
+.consult-scope i{font-style:normal;display:inline-block;font-size:8px;color:var(--blue);background:#eef2ff;border-radius:6px;padding:1px 5px;margin-right:5px}
+/* 底部一行：左侧辅助信息，右侧紧凑按钮 */
+.consult-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:8px}
+.consult-foot-space{flex:1;min-width:0}
+.consult-meta{display:flex;flex-wrap:wrap;gap:4px;flex:1;min-width:0}
+.consult-meta span{font-size:8px;color:var(--muted);background:#f4f6f4;border-radius:6px;padding:2px 5px}
+
+.consult-btns{display:flex;gap:6px;flex:0 0 auto;align-items:center}
+.consult-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid transparent;border-radius:8px;padding:5px 11px;font-size:10px;font-weight:700;line-height:1.2;cursor:pointer;white-space:nowrap}
+.consult-btn.call{background:var(--blue);color:#fff}
+.consult-btn.call:active{opacity:.88}
+.consult-btn.link{background:#eef2ff;color:var(--blue);border-color:#dbe3ff}
+.consult-btn.link:active{background:#e0e9ff}
+.consult-btn.disabled{background:#f4f5f4;color:#9aa3a0;cursor:default}
+
+/* 底部免责 — 参考紧急求助面板红色小字 */
+.consult-disclaim{font-size:9px;color:#c0341b;line-height:1.6;margin:10px 0 0}
