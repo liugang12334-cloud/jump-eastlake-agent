@@ -1,0 +1,23 @@
+/* 景区舒适度卡 — 分区舒适度封面示意图 + 实时查看 */
+.comfort-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:13px;margin-top:11px;box-shadow:0 8px 22px #17201f0a}
+.comfort-head{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.comfort-head .comfort-badge{align-self:flex-start;font-size:8px;color:#2f7d5f;background:#e6f6ee;padding:4px 8px;border-radius:8px}
+.comfort-head b{font-size:14px;color:var(--ink)}
+.comfort-head small{font-size:9px;color:var(--muted);line-height:1.6}
+
+/* 封面示意图（通用静态插画） */
+.comfort-cover{border-radius:13px;overflow:hidden;background:#eef4fb;border:1px solid #eaf0f8}
+.comfort-cover .comfort-map{display:block;width:100%;height:auto}
+
+.comfort-btn{width:100%;margin-top:11px;border:0;border-radius:12px;background:linear-gradient(135deg,#2f9e6e,#35b07a);color:#fff;padding:12px;font-size:12.5px;font-weight:700;cursor:pointer;box-shadow:0 5px 14px #2f9e6e33}
+.comfort-btn:active{opacity:.9}
+
+/* 实时查看弹窗 */
+.comfort-sheet-note{font-size:10px;color:var(--muted);line-height:1.6}
+.comfort-rows{display:grid;gap:7px;margin:11px 0;max-height:46vh;overflow:auto}
+.comfort-row{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:11px;padding:9px 10px;background:#fff}
+.comfort-dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%}
+.comfort-row>div{flex:1;min-width:0}
+.comfort-row b{display:block;font-size:11.5px;color:var(--ink)}
+.comfort-row small{display:block;font-size:8.5px;color:var(--muted);margin-top:2px;line-height:1.5}
+.comfort-row em{font-style:normal;font-size:10.5px;font-weight:700;white-space:nowrap}
